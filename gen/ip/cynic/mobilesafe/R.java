@@ -25,12 +25,12 @@ public final class R {
         public static final int launcher_bg=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f080002;
-        public static final int pb=0x7f080000;
-        public static final int tv_version=0x7f080001;
+        public static final int action_settings=0x7f080001;
+        public static final int tv_version=0x7f080000;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
+        public static final int activity_home=0x7f030000;
+        public static final int activity_main=0x7f030001;
     }
     public static final class menu {
         public static final int main=0x7f070000;
