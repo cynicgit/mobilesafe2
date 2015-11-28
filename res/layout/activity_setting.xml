@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cynic="http://schemas.android.com/apk/res/ip.cynic.mobilesafe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -12,5 +13,8 @@
         android:id="@+id/siv_update"
         android:layout_width="match_parent"
     	android:layout_height="wrap_content"
+    	cynic:title="自动更新设置"
+    	cynic:desc_on="自动更新已开启"
+    	cynic:desc_off="自动更新已关闭"
         />
 </LinearLayout>

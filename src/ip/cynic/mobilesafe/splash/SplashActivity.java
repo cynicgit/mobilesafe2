@@ -13,20 +13,14 @@ import java.net.URL;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.lidroid.xutils.HttpUtils;
-import com.lidroid.xutils.exception.HttpException;
-import com.lidroid.xutils.http.RequestParams;
-import com.lidroid.xutils.http.ResponseInfo;
-import com.lidroid.xutils.http.callback.RequestCallBack;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
-import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -35,8 +29,15 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.view.animation.AlphaAnimation;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
 
 public class SplashActivity extends Activity {
 	
@@ -68,7 +69,7 @@ public class SplashActivity extends Activity {
 					enterHome();	
 					break;
 				case CODE_NET_ERROR:
-					Toast.makeText(SplashActivity.this, "ÍøÂç´íÎó", Toast.LENGTH_SHORT).show();
+					Toast.makeText(SplashActivity.this, "·þÎñÆ÷´íÎó", Toast.LENGTH_SHORT).show();
 					enterHome();	
 					break;
 				case CODE_JSON_ERROR:
@@ -95,6 +96,12 @@ public class SplashActivity extends Activity {
 		}else{
 			handler.sendEmptyMessageDelayed(CODE_ENTRY_HOME, 2000);
 		}
+		
+		RelativeLayout rl = (RelativeLayout) findViewById(R.id.rl_splash);
+		//ÉèÖÃ½¥±ä¶¯»­ 2s
+		AlphaAnimation alphaAnimation = new AlphaAnimation(0.3f, 1f);
+		alphaAnimation.setDuration(2000);
+		rl.setAnimation(alphaAnimation);
 		
 	}
 	

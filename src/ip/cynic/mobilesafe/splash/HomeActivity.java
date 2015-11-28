@@ -81,7 +81,7 @@ public class HomeActivity extends Activity {
 			}else{
 				v = convertView;
 			}
-			System.out.println(v);
+			//System.out.println(v);
 			ImageView iv = (ImageView) v.findViewById(R.id.iv_item);
 			iv.setImageResource(menuPirc[position]);
 			TextView tv= (TextView) v.findViewById(R.id.tv_item);

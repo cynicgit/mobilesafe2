@@ -24,10 +24,10 @@ public class SettingActivity extends Activity{
 		boolean b = mPref.getBoolean("auto_update", true);
 		if(b){
 			siv.setCheck(true);
-			siv.setDesc("自动更新已开启");
+			//siv.setDesc("自动更新已开启");
 		}else{
 			siv.setCheck(false);
-			siv.setDesc("自动更新已关闭");
+			//siv.setDesc("自动更新已关闭");
 		}
 		siv.setOnClickListener(new OnClickListener() {
 			
@@ -36,11 +36,11 @@ public class SettingActivity extends Activity{
 				if(siv.isChecked()){
 					edit.putBoolean("auto_update", false);
 					siv.setCheck(false);
-					siv.setDesc("自动更新已关闭");
+					//siv.setDesc("自动更新已关闭");
 				}else{
 					edit.putBoolean("auto_update", true);
 					siv.setCheck(true);
-					siv.setDesc("自动更新已开启");
+					//siv.setDesc("自动更新已开启");
 				}
 				edit.commit();
 			}

@@ -9,6 +9,30 @@ package ip.cynic.mobilesafe;
 
 public final class R {
     public static final class attr {
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int desc_off=0x7f010002;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int desc_on=0x7f010001;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int title=0x7f010000;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -34,16 +58,17 @@ public final class R {
         public static final int launcher_bg=0x7f02000a;
     }
     public static final class id {
-        public static final int action_settings=0x7f080009;
-        public static final int cb_status=0x7f080008;
+        public static final int action_settings=0x7f08000a;
+        public static final int cb_status=0x7f080009;
         public static final int gv_menu=0x7f080000;
         public static final int iv_item=0x7f080001;
-        public static final int pb=0x7f080003;
-        public static final int siv_update=0x7f080005;
-        public static final int tv_desc=0x7f080007;
+        public static final int pb=0x7f080004;
+        public static final int rl_splash=0x7f080003;
+        public static final int siv_update=0x7f080006;
+        public static final int tv_desc=0x7f080008;
         public static final int tv_item=0x7f080002;
-        public static final int tv_title=0x7f080006;
-        public static final int tv_version=0x7f080004;
+        public static final int tv_title=0x7f080007;
+        public static final int tv_version=0x7f080005;
     }
     public static final class layout {
         public static final int activity_home=0x7f030000;
@@ -88,4 +113,65 @@ public final class R {
         public static final int AppTheme=0x7f060001;
         public static final int title=0x7f060002;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a ip_cynic_mobiesafe_view_SettingItemView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ip_cynic_mobiesafe_view_SettingItemView_desc_off ip.cynic.mobilesafe:desc_off}</code></td><td></td></tr>
+           <tr><td><code>{@link #ip_cynic_mobiesafe_view_SettingItemView_desc_on ip.cynic.mobilesafe:desc_on}</code></td><td></td></tr>
+           <tr><td><code>{@link #ip_cynic_mobiesafe_view_SettingItemView_title ip.cynic.mobilesafe:title}</code></td><td></td></tr>
+           </table>
+           @see #ip_cynic_mobiesafe_view_SettingItemView_desc_off
+           @see #ip_cynic_mobiesafe_view_SettingItemView_desc_on
+           @see #ip_cynic_mobiesafe_view_SettingItemView_title
+         */
+        public static final int[] ip_cynic_mobiesafe_view_SettingItemView = {
+            0x7f010000, 0x7f010001, 0x7f010002
+        };
+        /**
+          <p>This symbol is the offset where the {@link ip.cynic.mobilesafe.R.attr#desc_off}
+          attribute's value can be found in the {@link #ip_cynic_mobiesafe_view_SettingItemView} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:desc_off
+        */
+        public static final int ip_cynic_mobiesafe_view_SettingItemView_desc_off = 2;
+        /**
+          <p>This symbol is the offset where the {@link ip.cynic.mobilesafe.R.attr#desc_on}
+          attribute's value can be found in the {@link #ip_cynic_mobiesafe_view_SettingItemView} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:desc_on
+        */
+        public static final int ip_cynic_mobiesafe_view_SettingItemView_desc_on = 1;
+        /**
+          <p>This symbol is the offset where the {@link ip.cynic.mobilesafe.R.attr#title}
+          attribute's value can be found in the {@link #ip_cynic_mobiesafe_view_SettingItemView} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:title
+        */
+        public static final int ip_cynic_mobiesafe_view_SettingItemView_title = 0;
+    };
 }

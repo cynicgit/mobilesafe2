@@ -10,17 +10,33 @@ import android.widget.TextView;
 
 public class SettingItemView extends RelativeLayout{
 
+	private static final String NAMESPACE = "http://schemas.android.com/apk/res/ip.cynic.mobilesafe";
 	private CheckBox cbStatus;
 	private TextView tv_desc;
 	private TextView tv_title;
+	private String mTitle;
+	private String mDescOn;
+	private String mDescOff;
 
 	public SettingItemView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
+		 
 		init();
 	}
 
 	public SettingItemView(Context context, AttributeSet attrs) {
 		super(context, attrs);
+		int attributeCount = attrs.getAttributeCount();
+		
+		for (int i = 0; i < attributeCount; i++) {
+			String attributeName = attrs.getAttributeName(i);
+			String attributeValue = attrs.getAttributeValue(i);
+			
+			System.out.println(attributeName + "=" + attributeValue);
+		}
+		mTitle = attrs.getAttributeValue(NAMESPACE, "title");
+		mDescOn = attrs.getAttributeValue(NAMESPACE, "desc_on");
+		mDescOff = attrs.getAttributeValue(NAMESPACE, "desc_off");
 		init();
 	}
 
@@ -35,6 +51,7 @@ public class SettingItemView extends RelativeLayout{
 		tv_title = (TextView) findViewById(R.id.tv_title);
 		tv_desc = (TextView) findViewById(R.id.tv_desc);
 		cbStatus = (CheckBox) findViewById(R.id.cb_status);
+		setTitle(mTitle);
 	}
 	
 	public void setTitle(String text){
@@ -45,12 +62,21 @@ public class SettingItemView extends RelativeLayout{
 		tv_desc.setText(desc);
 	}
 	
-	public boolean isChecked(){
+	/**
+	 * 获取单选框状态
+	 * @return
+	 */
+	public boolean isChecked(){            
 		return cbStatus.isChecked();
 	}
 	
 	public void setCheck(boolean check){
 		cbStatus.setChecked(check);
+		if(check){
+			setDesc(mDescOn);
+		}else{
+			setDesc(mDescOff);
+		}
 	}
 	
 }
