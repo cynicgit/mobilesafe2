@@ -24,11 +24,13 @@ import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -87,7 +89,12 @@ public class SplashActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		tvVersion = (TextView) findViewById(R.id.tv_version);
 		tvVersion.setText("版本名:"+getVersion());
-		checkVersion();
+		boolean b = getSharedPreferences("config", MODE_PRIVATE).getBoolean("auto_update", true);
+		if(b){
+			checkVersion();
+		}else{
+			handler.sendEmptyMessageDelayed(CODE_ENTRY_HOME, 2000);
+		}
 		
 	}
 	
@@ -181,6 +188,13 @@ public class SplashActivity extends Activity {
 			}
 		});
 		
+		//点击返回按键 进入主页面
+		builder.setOnCancelListener(new OnCancelListener() {
+			public void onCancel(DialogInterface dialog) {
+				enterHome();
+			}
+		});
+		
 		builder.show();
 	}
 	
@@ -197,11 +211,18 @@ public class SplashActivity extends Activity {
 					System.out.println(total+":"+current);
 					mypDialog.setMax((int)total);
 					mypDialog.setProgress((int)current);
-					
+					//点击返回按键 进入主页面
+					mypDialog.setOnCancelListener(new OnCancelListener() {
+						public void onCancel(DialogInterface dialog) {
+							enterHome();
+						}
+					});
 				}
 				@Override
 				public void onSuccess(ResponseInfo<File> arg0) {
+					mypDialog = null;
 					Toast.makeText(SplashActivity.this, "下载完成", Toast.LENGTH_SHORT).show();
+					install(Uri.fromFile(arg0.result),"application/vnd.android.package-archive");
 				}
 				
 				@Override
@@ -212,6 +233,14 @@ public class SplashActivity extends Activity {
 		}else{
 			Toast.makeText(SplashActivity.this, "SD卡未就绪", Toast.LENGTH_SHORT).show();
 		}
+	}
+	
+	public void install(Uri data,String type){
+		Intent intent = new Intent();
+		intent.setAction(Intent.ACTION_VIEW);
+		intent.addCategory(Intent.CATEGORY_DEFAULT);
+		intent.setDataAndType(data, type);
+		startActivityForResult(intent, 0);
 	}
 	
 	public void showProgessBar(){
@@ -234,8 +263,29 @@ public class SplashActivity extends Activity {
 		//设置ProgressDialog 的进度条是否不明确
 		mypDialog.setCancelable(true);
 		//设置ProgressDialog 是否可以按退回按键取消
+		
+		mypDialog.setCanceledOnTouchOutside(false);
 		mypDialog.show();
 		//让ProgressDialog显示
+	}
+	
+	@Override
+	public void finish() {
+		if(mypDialog!=null){
+			Toast.makeText(SplashActivity.this, "下载已取消", Toast.LENGTH_SHORT).show();
+			
+		}else{			
+			super.finish();
+		}
+	}
+	
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		enterHome();
+		
+		Toast.makeText(SplashActivity.this, "安装已取消", Toast.LENGTH_SHORT).show();
+		super.onActivityResult(requestCode, resultCode, data);
 	}
 	
 	/**

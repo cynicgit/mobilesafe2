@@ -1,6 +1,7 @@
 *.class
 *.apk
 bin/
+classes/
 gen/
 .settings/
 proguard/
