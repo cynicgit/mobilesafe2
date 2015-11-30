@@ -179,7 +179,7 @@ public class SplashActivity extends Activity {
 	
 	private void showDialog(){
 		AlertDialog.Builder builder = new Builder(this);
-		builder.setTitle("软件更新");
+		
 		builder.setMessage(msg);    
 		builder.setPositiveButton("更新", new OnClickListener() {
 			@Override
