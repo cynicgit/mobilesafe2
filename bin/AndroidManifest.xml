@@ -26,6 +26,11 @@
         </activity>
         <activity android:name="ip.cynic.mobilesafe.splash.HomeActivity"/>
         <activity android:name="ip.cynic.mobilesafe.splash.SettingActivity"/>
+        <activity android:name="ip.cynic.mobilesafe.splash.SettingSetup1Activity"/>
+        <activity android:name="ip.cynic.mobilesafe.splash.SettingSetup2Activity"/>
+        <activity android:name="ip.cynic.mobilesafe.splash.SettingSetup3Activity"/>
+        <activity android:name="ip.cynic.mobilesafe.splash.SettingSetup4Activity"/>
+        <activity android:name="ip.cynic.mobilesafe.splash.LostFindActivity"/>
     </application>
 
 </manifest>

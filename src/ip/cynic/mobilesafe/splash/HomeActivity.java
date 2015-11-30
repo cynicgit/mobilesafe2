@@ -147,6 +147,7 @@ public class HomeActivity extends Activity {
 					mPref.edit().putString("password", pass).commit();
 					Toast.makeText(HomeActivity.this, "√‹¬Î…Ë÷√≥…π¶", Toast.LENGTH_SHORT).show();
 					dialog.dismiss();
+					startActivity(new Intent(HomeActivity.this, LostFindActivity.class));
 				}
 			}
 			
@@ -186,6 +187,7 @@ public class HomeActivity extends Activity {
 					String strPass = mPref.getString("password", "");
 					if(pass.equals(strPass)){
 						dialog.dismiss();
+						startActivity(new Intent(HomeActivity.this, LostFindActivity.class));
 					}else{
 						Toast.makeText(HomeActivity.this, "√‹¬Î¥ÌŒÛ", Toast.LENGTH_SHORT).show();
 					}
