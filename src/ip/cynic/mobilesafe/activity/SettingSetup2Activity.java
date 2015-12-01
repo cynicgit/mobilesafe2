@@ -40,11 +40,11 @@ public class SettingSetup2Activity extends BaseSetupActivity {
 	
 	public void bindSim(View v){
 		if(siv.isChecked()){
-			mPref.edit().putBoolean("bind_sim", true);
-			siv.setCheck(true);
-		}else{
-			mPref.edit().putBoolean("bind_sim", false);
+			mPref.edit().putBoolean("bind_sim", false).commit();
 			siv.setCheck(false);
+		}else{
+			mPref.edit().putBoolean("bind_sim", true).commit();
+			siv.setCheck(true);
 		}
 	}
 }

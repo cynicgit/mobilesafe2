@@ -1,27 +1,37 @@
 package ip.cynic.mobilesafe.activity;
 
 import ip.cynic.mobilesafe.R;
-import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.CheckBox;
 
 public class SettingSetup4Activity extends BaseSetupActivity {
 
-	private SharedPreferences mPref;
+
+	private CheckBox cbLock;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_setup4);
-		mPref = getSharedPreferences("config", MODE_PRIVATE);
+		cbLock = (CheckBox) findViewById(R.id.cb_lock);
+		boolean lock = mPref.getBoolean("lock", false);
+		if(lock){
+			cbLock.setChecked(true);
+			cbLock.setText("防盗保护已开启");
+		}else{
+			cbLock.setChecked(false);
+			cbLock.setText("防盗保护已开闭");
+		}
 	}
 
 	@Override
 	public void showNextPage() {
 		startActivity(new Intent(this,LostFindActivity.class));
 		finish();
+		if(cbLock.isChecked()){
+			mPref.edit().putBoolean("lock", true);
+		}
 		mPref.edit().putBoolean("configed", true).commit();
 		overridePendingTransition(R.anim.tran_next_in, R.anim.tran_next_out);// 进入动画和退出动画
 	}
