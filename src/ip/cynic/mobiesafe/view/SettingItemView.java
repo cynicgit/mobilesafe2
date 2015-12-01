@@ -28,12 +28,12 @@ public class SettingItemView extends RelativeLayout{
 		super(context, attrs);
 		int attributeCount = attrs.getAttributeCount();
 		
-		for (int i = 0; i < attributeCount; i++) {
+		/*for (int i = 0; i < attributeCount; i++) {
 			String attributeName = attrs.getAttributeName(i);
 			String attributeValue = attrs.getAttributeValue(i);
 			
 			System.out.println(attributeName + "=" + attributeValue);
-		}
+		}*/
 		mTitle = attrs.getAttributeValue(NAMESPACE, "title");
 		mDescOn = attrs.getAttributeValue(NAMESPACE, "desc_on");
 		mDescOff = attrs.getAttributeValue(NAMESPACE, "desc_off");

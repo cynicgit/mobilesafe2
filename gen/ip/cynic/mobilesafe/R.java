@@ -80,7 +80,7 @@ containing a value of this type.
         public static final int unlock=0x7f02001a;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000e;
+        public static final int action_settings=0x7f09000f;
         public static final int bt_cancel=0x7f090005;
         public static final int bt_confirm=0x7f090004;
         public static final int cb_status=0x7f09000d;
@@ -90,6 +90,7 @@ containing a value of this type.
         public static final int iv_item=0x7f090001;
         public static final int pb=0x7f090007;
         public static final int rl_splash=0x7f090006;
+        public static final int siv_sim=0x7f09000e;
         public static final int siv_update=0x7f09000a;
         public static final int tv_desc=0x7f09000c;
         public static final int tv_item=0x7f090002;

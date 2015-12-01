@@ -16,7 +16,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="ip.cynic.mobilesafe.splash.SplashActivity"
+            android:name="ip.cynic.mobilesafe.activity.SplashActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,13 +24,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="ip.cynic.mobilesafe.splash.HomeActivity"/>
-        <activity android:name="ip.cynic.mobilesafe.splash.SettingActivity"/>
-        <activity android:name="ip.cynic.mobilesafe.splash.SettingSetup1Activity"/>
-        <activity android:name="ip.cynic.mobilesafe.splash.SettingSetup2Activity"/>
-        <activity android:name="ip.cynic.mobilesafe.splash.SettingSetup3Activity"/>
-        <activity android:name="ip.cynic.mobilesafe.splash.SettingSetup4Activity"/>
-        <activity android:name="ip.cynic.mobilesafe.splash.LostFindActivity"/>
+        <activity android:name="ip.cynic.mobilesafe.activity.HomeActivity"/>
+        <activity android:name="ip.cynic.mobilesafe.activity.SettingActivity"/>
+        <activity android:name="ip.cynic.mobilesafe.activity.SettingSetup1Activity"/>
+        <activity android:name="ip.cynic.mobilesafe.activity.SettingSetup2Activity"/>
+        <activity android:name="ip.cynic.mobilesafe.activity.SettingSetup3Activity"/>
+        <activity android:name="ip.cynic.mobilesafe.activity.SettingSetup4Activity"/>
+        <activity android:name="ip.cynic.mobilesafe.activity.LostFindActivity"/>
     </application>
 
 </manifest>

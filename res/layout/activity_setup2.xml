@@ -22,9 +22,10 @@
         android:text="就会发送报警短信" />   
 	
 	<ip.cynic.mobiesafe.view.SettingItemView
-        android:id="@+id/siv_update"
+        android:id="@+id/siv_sim"
         android:layout_width="match_parent"
     	android:layout_height="wrap_content"
+    	android:onClick="bingSim"
     	cynic:title="点击绑定sim卡"
     	cynic:desc_on="sim卡已绑定"
     	cynic:desc_off="sim卡没有绑定"

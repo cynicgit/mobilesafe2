@@ -1,12 +1,10 @@
-package ip.cynic.mobilesafe.splash;
+package ip.cynic.mobilesafe.activity;
 
 import ip.cynic.mobilesafe.R;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
-public class SettingSetup1Activity extends Activity {
+public class SettingSetup1Activity extends BaseSetupActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -14,10 +12,16 @@ public class SettingSetup1Activity extends Activity {
 		setContentView(R.layout.activity_setup1);
 	}
 
-	public void next(View v) {
+
+	@Override
+	public void showNextPage() {
 		startActivity(new Intent(this, SettingSetup2Activity.class));
 		finish();
 		// 两个界面切换的动画
 		overridePendingTransition(R.anim.tran_next_in, R.anim.tran_next_out);// 进入动画和退出动画
+	}
+
+	@Override
+	public void showPrevious() {
 	}
 }

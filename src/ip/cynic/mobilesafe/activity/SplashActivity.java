@@ -1,4 +1,4 @@
-package ip.cynic.mobilesafe.splash;
+package ip.cynic.mobilesafe.activity;
 
 import ip.cynic.mobile.utils.StreamUtils;
 import ip.cynic.mobilesafe.R;

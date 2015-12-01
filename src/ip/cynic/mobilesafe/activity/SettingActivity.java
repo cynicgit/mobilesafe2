@@ -1,4 +1,4 @@
-package ip.cynic.mobilesafe.splash;
+package ip.cynic.mobilesafe.activity;
 
 import ip.cynic.mobiesafe.view.SettingItemView;
 import ip.cynic.mobilesafe.R;
