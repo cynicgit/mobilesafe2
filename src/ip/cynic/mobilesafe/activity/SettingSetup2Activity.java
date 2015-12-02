@@ -5,6 +5,7 @@ import ip.cynic.mobile.utils.ToastUtil;
 import ip.cynic.mobilesafe.R;
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.view.View;
 
 public class SettingSetup2Activity extends BaseSetupActivity {
@@ -26,6 +27,12 @@ public class SettingSetup2Activity extends BaseSetupActivity {
 			ToastUtil.showToasr(this, "必须绑定sim卡");
 			return ;
 		}
+		TelephonyManager manager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+		String phoneNumber = manager.getLine1Number();//手机号码
+		String simOperator = manager.getSimOperator();//手机imsi
+		String simSerialNumber = manager.getSimSerialNumber();//手机序列号
+		System.out.println(phoneNumber+" "+" "+simOperator+" "+simSerialNumber);
+		mPref.edit().putString("phoneNumber", phoneNumber).commit();
 		startActivity(new Intent(this,SettingSetup3Activity.class));
 		finish();
 		overridePendingTransition(R.anim.tran_next_in, R.anim.tran_next_out);// 进入动画和退出动画
