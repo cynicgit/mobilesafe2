@@ -58,6 +58,7 @@ public class SettingSetup3Activity extends BaseSetupActivity {
 		System.out.println("resultCode:"+resultCode);
 		if(resultCode==10){
 			String phone = data.getStringExtra("phone");
+			phone = phone.replaceAll(" ", "").replaceAll("-", "");
 			etPhone.setText(phone);
 		}
 	}

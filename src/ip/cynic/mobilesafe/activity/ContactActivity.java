@@ -76,9 +76,10 @@ public class ContactActivity extends Activity{
 					contact.setPhone(data1);
 				}
 			}
-
+			dataQuery.close();
 			contactList.add(contact);
 		}
+		rawContactQuery.close();
 	}
 	
 	class MyAdapter extends BaseAdapter {

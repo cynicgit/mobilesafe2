@@ -14,12 +14,12 @@
         android:layout_margin="2dp" >
 
         <TextView
-            android:id="@+id/tv_safe_phone"
             style="@style/content"
             android:layout_alignParentLeft="true"
             android:text="安全号码" />
 
         <TextView
+            android:id="@+id/tv_safe_phone"
             style="@style/content"
             android:layout_alignParentRight="true"
             android:text="55566" />
@@ -47,7 +47,7 @@
             android:layout_height="20dp"
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
-            android:background="@drawable/unlock" />
+            android:src="@drawable/unlock" />
     </RelativeLayout>
 
     <ImageView

@@ -17,11 +17,14 @@ public class LostFindActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lost_find);
+		mPref = getSharedPreferences("config", MODE_PRIVATE);
 		TextView tvSafePhone = (TextView) findViewById(R.id.tv_safe_phone);
 		ImageView ivLock = (ImageView) findViewById(R.id.iv_lock);
 		boolean b = mPref.getBoolean("lock", false);
 		if(b){
 			ivLock.setImageResource(R.drawable.lock);
+		} else {
+			ivLock.setImageResource(R.drawable.unlock);
 		}
 		
 		if(!"".equals(mPref.getString("phone", ""))){
