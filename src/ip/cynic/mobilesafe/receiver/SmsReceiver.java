@@ -57,14 +57,12 @@ public class SmsReceiver extends BroadcastReceiver{
 				abortBroadcast();
 			}else if("#*wipedata*#".equals(messageBody)){
 				initAdmin(context);
-				mDPM.wipeData(0);
+				mDPM.wipeData(0);//清除数据
 				abortBroadcast();
 			}else if("#*lockscreen*#".equals(messageBody)){
 				initAdmin(context);
-				mDPM.lockNow();
+				mDPM.lockNow();//锁屏
 				abortBroadcast();
-			}else{
-				mDPM.removeActiveAdmin(mDeviceAdminSample);//取消激活
 			}
 		}
 		

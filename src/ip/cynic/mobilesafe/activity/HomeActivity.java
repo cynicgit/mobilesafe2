@@ -51,6 +51,10 @@ public class HomeActivity extends Activity {
 					case 0://手机防盗  弹出密码框
 						showPasswordDialog();
 						break;
+						
+					case 7://高级工具
+						startActivity(new Intent(HomeActivity.this, AdvanceToolActivity.class));
+						break;
 					case 8:
 						Intent intent = new Intent(HomeActivity.this, SettingActivity.class);
 						startActivity(intent);

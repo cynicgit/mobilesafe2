@@ -40,6 +40,8 @@
         <activity android:name="ip.cynic.mobilesafe.activity.SettingSetup4Activity"/>
         <activity android:name="ip.cynic.mobilesafe.activity.LostFindActivity"/>
         <activity android:name="ip.cynic.mobilesafe.activity.ContactActivity"/>
+        <activity android:name="ip.cynic.mobilesafe.activity.AdvanceToolActivity"/>
+        <activity android:name="ip.cynic.mobilesafe.activity.AddressActivity"/>
         
         <receiver android:name="ip.cynic.mobilesafe.receiver.BootReceiver">
              <intent-filter>
